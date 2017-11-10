@@ -2,21 +2,31 @@
   "name": "proto-starter",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "test": "jest"
   },
   "dependencies": {
+    "babel-jest": "^20.0.3",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.23.0",
     "core-js": "^2.4.1",
+    "history": "^4.7.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "universal-router": "^5.0.0",
+    "viewmodel-react": "*",
+    "viewmodel-react-explorer": "*",
+    "viewmodel-react-plugin": "*"
   },
   "babel": {
     "presets": [
       "env",
       "react"
+    ],
+    "plugins": [
+      "viewmodel-react-plugin"
     ]
   }
 }

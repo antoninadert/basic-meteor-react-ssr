@@ -1,7 +1,7 @@
 
 import React from 'react'; //React needed for the <Component /> Syntax
 import ReactDOM from 'react-dom';
-import Big from '/imports/Big/Big';
+import { Big } from '/imports/Big/Big';
 class App extends React.Component {
   render() {
     return (
