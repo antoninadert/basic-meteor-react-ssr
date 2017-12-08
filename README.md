@@ -22,6 +22,10 @@ To test the performance problem with SSR on windows or macOS
 
 `meteor update`
 
+Then you can optionally modify the `server/main` file and replace the dependancy of `universal-router/legacy` to `universal-router` because the version of Node of Meteor 1.6 should be > 5
+The legacy version of universal-router is needed for version of node <5
+
+Then you just
 `meteor`
 
 Then try an Audit of Chrome lighthouse (time to first paint should be considerably slower around 8000 ms, the same as time to interactive, it is almost like if SSR was non existent and everything was rendered client side)
