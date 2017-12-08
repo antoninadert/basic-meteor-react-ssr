@@ -1,21 +1,30 @@
 # basic-meteor-react-ssr
-A basic page showing SSR in React + Meteor.
+A basic page showing SSR in React + Meteor. There is a known issue of performance on the last version of Meteor with Universal Router.
+
+The server-render package now has trouble to render in time when being done in the Router.resolve callback of Universal router, while it worked fine in 1.5.2.2
+
+Checkout the minimal branch to have a simple repro. Then update it to Meteor 1.6 to see the performance problem
 
 to start:
+`git clone https://github.com/antoninadert/basic-meteor-react-ssr.git`
 
-meteor npm install
+`cd basic-meteor-react-ssr/`
 
-meteor
+`git checkout minimal`
 
-Then try an Audit of Chrome lighthouse (time to first paint is around 1400 ms on my machine)
+`meteor npm install`
 
-To test the performance problem with SSR on windows
+`meteor`
 
-meteor update
+Then try an Audit of Chrome lighthouse (time to first paint is around 1400 - 2200 ms on my machine, while time to first interactive is about 8000 ms)
 
-meteor
+To test the performance problem with SSR on windows or macOS
 
-Then try an Audit of Chrome lighthouse (time to first paint should be considerably slower)
+`meteor update`
+
+`meteor`
+
+Then try an Audit of Chrome lighthouse (time to first paint should be considerably slower around 8000 ms, the same as time to interactive, it is almost like if SSR was non existent and everything was rendered client side)
 
 Licence
 -------------
